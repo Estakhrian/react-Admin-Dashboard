@@ -2,7 +2,7 @@ import { Menu, Search,Filter, Plus, Sun, Bell, Settings, ChevronDown} from 'luci
 import React from 'react'
 import userImg from "./../../assets/images/adminImg.png"
 
-const Header = () => {
+const Header = ({onToggleSideBar}) => {
   return (
     <div className='w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl BORDER-B border-slate-200/50
     dark:border-slate700/50 p-3'>
@@ -10,7 +10,8 @@ const Header = () => {
             {/**left section */}
             <div className='flex items-center space-x-2'>
                 <button className='p-2 rounded-lg text-slate-600 dark:text-slate-300
-                hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+                hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
+                onClick={onToggleSideBar}>
                     <Menu className='w-5 h-5'/>
                 </button>
                 <div className='hidden md:block'>
