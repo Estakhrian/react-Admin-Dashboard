@@ -112,7 +112,7 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
                 {menuItems.map((item) => (
                     <div key={item.id} onClick={() => onPageChanged(item.id)}>
                         <button className={`w-full flex items-center justify-between p-3 rounded-xl
-                            transition-all duration-200 ${currentPage === item.id || item.active ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25" :
+                            transition-all duration-200 ${currentPage === item.id ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25" :
                                 "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"}`}>
                             <div className='flex items-center space-x-2 mr-1'>
                                 <item.icon className='w-5 h-5' />

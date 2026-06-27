@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Sidebar from './Components/Layout/Sidebar'
 import Header from './Components/Layout/Header'
+import Dashboard from './Components/Dashboard/Dashboard'
 const App = () => {
 
   const [showSideBar, setShowSideBar] = useState(true)
@@ -19,6 +20,11 @@ const App = () => {
         
         <div className='flex flex-1 flex-col overflow-hidden'>
           <Header showSideBar={showSideBar} onToggleSideBar = {() => setShowSideBar(!showSideBar)}/>
+            <main className='flex-1 overflow-y-auto bg-transparent'>
+              <div className='p-6 space-y-6'>
+                {currentPage === "dashboard" && <Dashboard />}
+              </div>
+            </main>
         </div>
 
       </div>
