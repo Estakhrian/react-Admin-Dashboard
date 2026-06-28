@@ -21,7 +21,7 @@ const SalesChart = () => {
 
 
     return (
-        <div className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded p-6 border w-full
+        <div className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded-md p-6 border w-full
     border-slate-200/50 dark:border-slate-700/50'>
 
         {/**top section */}
@@ -31,7 +31,7 @@ const SalesChart = () => {
             </div>
 
             {/**chart section */}
-            <div className='h-48'>
+            <div className='h-56'>
                 <ResponsiveContainer>
                     <PieChart>
                         <Pie 

@@ -73,7 +73,6 @@ const StatsGrid = () => {
                     <div className='mt-4 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden'>
                         <div className={`h-full  bg-gradient-to-r ${stat.color} rounded-full transition-all duration-100`}
                             style={{ width: stat.trend === "up" ? "75%" : "45%" }}>
-
                         </div>
                     </div>
                 </div>

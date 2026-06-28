@@ -22,7 +22,7 @@ const RevnueChart = () => {
 
 
     return (
-        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-bl-2xl
+        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-md
     border border-slate-200/50 dark:border-slate-700/50 p-6 w-full'>
             <div className='flex items-center justify-between mb-4'>
                 <div>
