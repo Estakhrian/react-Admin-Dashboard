@@ -22,25 +22,25 @@ const RevnueChart = () => {
 
 
     return (
-        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-md
-    border border-slate-200/50 dark:border-slate-700/50 p-6 w-full'>
+        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-lg
+    border border-slate-200/50 dark:border-slate-700/50 p-3 sm:p-4 md:p-6 w-full'>
             <div className='flex items-center justify-between mb-4'>
                 <div>
-                    <h3 className='text-xl font-bold text-slate-800 dark:text-white'
+                    <h3 className='text-base sm:text-lg md:text-xl font-bold text-slate-800 dark:text-white'
                     >Revenue Chart</h3>
-                    <p className='text-sm text-slate-500 dark:text-slate-400'>Monthly revenue and expenses</p>
+                    <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'>Monthly revenue and expenses</p>
                 </div>
-                <div className='flex items-center space-x-4'>
-                    <div className='flex items-center space-x-2'>
-                        <div className='w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full'></div>
-                        <div className='text-sm text-slate-600 dark:text-slate-400'>
+                <div className='flex flex-col items-start mr-7'>
+                    <div className='flex items-center space-x-1'>
+                        <div className='w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full'></div>
+                        <div className='text-xs sm:text-sm text-slate-600 dark:text-slate-400'>
                             <span>Revenue</span>
                         </div>
                     </div>
                     <div className='flex items-center space-x-2'>
-                        <div className='w-3 h-3 bg-gradient-to-r from-slate-400 to-slate-500
+                        <div className='w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-slate-400 to-slate-500
                         rounded-full'></div>
-                        <div className='text-sm text-slate-600 dark:text-state-400'>
+                        <div className='text-xs sm:text-sm text-slate-600 dark:text-state-400'>
                             <span>Expenses</span>
                         </div>
                     </div>
@@ -49,13 +49,13 @@ const RevnueChart = () => {
 
             <div className='h-80'>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <BarChart data={data} margin={{ top: 20, right: 0 , bottom: 5 }}>
 
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8fe" opacity={0.3} />
 
-                        <XAxis dataKey="month" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false}/>
+                        <XAxis dataKey="month" stroke="#64748b" fontSize={10} tickLine={false} axisLine={false}/>
 
-                        <YAxis stroke='#64748b' fontSize={12} tickLine= {false} axisLine= {false} tickFormatter={(value) => `$${value / 1000}k`} />
+                        <YAxis stroke='#64748b' fontSize={10} tickLine= {false} axisLine= {false} tickFormatter={(value) => `$${value / 1000}k`} />
 
                         <Tooltip contentStyle={{
                             backgroundColor: "rgba(255, 255, 255, 0.95)",
@@ -65,8 +65,8 @@ const RevnueChart = () => {
                         }}
                         formatter={(value) => [`$${value.toLocaleString()}`, ""]} />
 
-                        <Bar dataKey="revenue" fill="url(#revenueGradient)" radius={[4, 4, 0, 0]} maxBarSize={40} />
-                        <Bar dataKey="expenses" fill="url(#expensesGradient)" radius={[4, 4, 0, 0]} maxBarSize={40} />
+                        <Bar dataKey="revenue" fill="url(#revenueGradient)" radius={[4, 4, 0, 0]} maxBarSize={20} />
+                        <Bar dataKey="expenses" fill="url(#expensesGradient)" radius={[4, 4, 0, 0]} maxBarSize={20} />
 
                         <defs>
                             <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">

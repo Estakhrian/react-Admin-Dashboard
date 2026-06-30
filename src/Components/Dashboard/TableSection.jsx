@@ -3,7 +3,7 @@ import React from 'react'
 
 const recentData = [
     {
-        id: "#3847",
+        id: "#847",
         customer: "John smith",
         product: "Macbook Pro 16",
         amount: "$2,399",
@@ -11,7 +11,7 @@ const recentData = [
         date: "2026-01-15",
     },
     {
-        id: "#3848",
+        id: "#848",
         customer: "Sara Johnson",
         product: "iPhone 15 Pro",
         amount: "$1,199",
@@ -19,7 +19,7 @@ const recentData = [
         date: "2026-01-15",
     },
     {
-        id: "#3849",
+        id: "#849",
         customer: "Emily Davis",
         product: "AirPods pro",
         amount: "$249",
@@ -27,7 +27,7 @@ const recentData = [
         date: "2026-01-14",
     },
     {
-        id: "#3850",
+        id: "#850",
         customer: "Mike Wilson",
         product: "iPad Air",
         amount: "$599",
@@ -84,19 +84,19 @@ const getStatusColor = (status) => {
 
 const TableSection = () => {
     return (
-        <div className='space-y-5'>
+        <div className='space-y-4'>
             {/**Recent Order */}
             <div className='bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-lg
       border border-slate-200/50 dark:border-slate700/50 overflow-hidden'>
-                <div className='p-6 border-slate-200/50 dark:border-slate-700/50'>
+                <div className='p-3 sm:p-4 md:p-5 lg:p-6 border-slate-200/50 dark:border-slate-700/50'>
                     <div className='flex items-center justify-between'>
                         <div>
-                            <h3 className='text-lg font-bold text-slate-800 dark:text-white'>
+                            <h3 className='text-base sm:text-lg md:text-xl font-bold text-slate-800 dark:text-white'>
                                 Recent Orders</h3>
-                            <p className='text-sm text-slate-500 dark:text-slate-400'
+                            <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'
                             >Latest customer Orders</p>
                         </div>
-                        <button className='text-blue-600 hover:text-blue-700 text-sm font-medium'
+                        <button className='text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium'
                         >View All</button>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ const TableSection = () => {
                                         <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.date}</span>
                                     </td> */}
                                     <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
-                                        <span className={`text-slate-400 dark:text-white font-medium text-xs px-3 sm:px-4
+                                        <span className={`text-slate-500 dark:text-white font-medium text-xs md:text-sm px-3 sm:px-4
                                         py-1 rounded-full ${getStatusColor(item.status)}`}>{item.status}</span>
                                     </td>
                                 </tr>
@@ -149,18 +149,18 @@ const TableSection = () => {
             {/**top products */}
             <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-lg border 
             border-slate-200/50 dark:border-slate-700/50 overflow-hidden'>
-                <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
+                <div className='p-3 sm:p-4 md:p-5 lg:p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
                     <div className='flex items-center justify-between'>
-                        <div className='text-lg font-bold text-slate-800 dark:text-white'>
-                            <h3 className='text-lg font-bold text-slate-800 dark:text-white'>
+                        <div className=' text-slate-800 dark:text-white'>
+                            <h3 className='text-base sm:text-lg md:text-xl font-bold text-slate-800 dark:text-white'>
                                 Top Products
                             </h3>
                         </div>
-                        <p className='text-sm text-slate-500 dark:text-slate-400'>
+                        <p className='hidden md:block text-sm text-slate-500 dark:text-slate-400'>
                             best performing products
                         </p>
                     </div>
-                    <button className='text-blue-600 hover:text-blue-700 text-sm font-medium'
+                    <button className='text-xs text-blue-600 hover:text-blue-700 sm:text-sm font-medium'
                     >View All</button>
                 </div>
 
@@ -169,16 +169,16 @@ const TableSection = () => {
                     <div key={index} className='flex items-center justify-between p-3 rounded-lg hove:bg-slate-50 dark:hover:bg-slate800/50
                     transition-colors'>
                         <div className='flex-1'>
-                            <h4 className='text-sm font-semibold text-slate-800 dark:text-white'>{item.name}</h4>
+                            <h4 className='text-xs sm:text-sm font-semibold text-slate-800 dark:text-white'>{item.name}</h4>
                             <p className='text-xs text-slate-500 dark:text-slate-400'>${item.sales}</p>
                         </div>
-                        <div className='text-right'>
-                            <p className='text-sm font-semibold text-slate-800 dark:text-white'>
+                        <div className='text-left'>
+                            <p className='text-xs sm:text-sm font-semibold text-slate-800 dark:text-white'>
                                 {item.revenue}
                             </p>
                             <div className='flex items-center space-x-1'>
-                                {item.trend === "up" ? <TrendingUp className='w-3 h-3 text-green-500' />
-                                    : <TrendingDown className='w-3 h-3 text-red-500' />}
+                                {item.trend === "up" ? <TrendingUp className='w-2 sm:w-3 h-2 sm:h-3 text-green-500' />
+                                    : <TrendingDown className='w-2 sm:w-3 h-2 sm:h-3 text-red-500' />}
                                 <span className={`text-xs font-medium ${item.trend === "up" ? "text-green-500" : "text-red-500"}`}>
                                     {item.change}
                                 </span>

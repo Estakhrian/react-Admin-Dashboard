@@ -37,7 +37,7 @@ const Header = ({ onToggleSideBar, showSideBar }) => {
                 </div>
 
                 {/**center section */}
-                <div className='flex-1 max-w-md mx-10'>
+                <div className='flex-1 max-w-md mx-4'>
                     <div className='relative'>
                         <Search className='w-3 h-3 md:w-4 md:h-4 absolute left-1 top-1/2 transform -translate-y-1/2 text-slate-400' />
                         <input type='text' placeholder='Search Anything' className='text-xs lg:text-sm md:text-sm w-full pl-5 md:pl-6 py-1.5 bg-slate-100
@@ -66,7 +66,7 @@ const Header = ({ onToggleSideBar, showSideBar }) => {
                     </button>
 
                     {/**notification */}
-                    <button className='relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100  dark:hover:bg-slate-800
+                    <button className='hidden md:block relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100  dark:hover:bg-slate-800
                 transition-color'>
                         <Bell className='w-4 h-4 md:w-5 md:h-5' />
                         <span className='absolute -top-1.5 w-4 h-4 bg-red-600 text-white text-xs
@@ -74,7 +74,7 @@ const Header = ({ onToggleSideBar, showSideBar }) => {
                     </button>
 
                     {/**setting */}
-                    <button className='relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800
+                    <button className='hidden md:block relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800
                 transition-color'>
                         <Settings className='w-4 h-4 md:w-5 md:h-5' />
                     </button>
