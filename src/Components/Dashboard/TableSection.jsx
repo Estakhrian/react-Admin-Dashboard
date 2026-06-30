@@ -102,15 +102,15 @@ const TableSection = () => {
                 </div>
 
                 {/** table */}
-                <div className='overflow-x-auto p-1'>
+                <div className='overflow-x-hidden p-1'>
                     <table className='w-full '>
                         <thead>
                             <tr>
                                 <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>ID</th>
                                 <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Product</th>
                                 <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Amount</th>
-                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Customer</th>
-                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Date</th>
+                                {/* <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Customer</th> */}
+                                {/* <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Date</th> */}
                                 <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Status</th>
                             </tr>
                         </thead>
@@ -128,13 +128,13 @@ const TableSection = () => {
                                         <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.amount}</span>
                                     </td>
 
-                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                    {/* <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
                                         <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.customer}</span>
                                     </td>
 
                                     <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
                                         <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.date}</span>
-                                    </td>
+                                    </td> */}
                                     <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
                                         <span className={`text-slate-400 dark:text-white font-medium text-xs px-3 sm:px-4
                                         py-1 rounded-full ${getStatusColor(item.status)}`}>{item.status}</span>
