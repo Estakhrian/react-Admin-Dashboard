@@ -30,7 +30,7 @@ const RevnueChart = () => {
                     >Revenue Chart</h3>
                     <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'>Monthly revenue and expenses</p>
                 </div>
-                <div className='flex flex-col items-start mr-7'>
+                <div className='flex flex-col items-start mr-2'>
                     <div className='flex items-center space-x-1'>
                         <div className='w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full'></div>
                         <div className='text-xs sm:text-sm text-slate-600 dark:text-slate-400'>

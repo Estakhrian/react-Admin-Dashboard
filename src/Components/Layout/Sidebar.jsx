@@ -111,7 +111,7 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
             </div>
 
             {/**navigation */}
-            <nav className={`flex-1 overflow-y-auto ${showSideBar ? "space-y-3 p-2" : "space-y-5 p-3"}`}>
+            <nav className={`flex-1 overflow-y-auto ${showSideBar ? "space-y-2 p-3" : "space-y-5 p-3"}`}>
                 {menuItems.map((item) => (
                     <div key={item.id} onClick={() => onPageChanged(item.id)}>
                         <button className={`w-full flex items-center justify-start p-1 rounded-xl
@@ -123,7 +123,7 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
                                 <>
                                     {showSideBar && (
                                         <div>
-                                            <span className='text-xs sm:text-sm lg:text-base font-semibold mx-1 py-1'>{item.label}</span>
+                                            <span className='text-xs sm:text-sm  font-semibold mx-1 mb-0.5 py-1'>{item.label}</span>
 
                                             {item.Badge && (
                                                 <span className='py-1 px-1 md:px-2 text-xs bg-red-500 text-white rounded-full'>{item.Badge}</span>
@@ -159,8 +159,8 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
 
             {/* *User profile */}
             {showSideBar && (
-                <div className='w-full border-t border-slate-400/50 bg-white/60 transition-all duration-500'>
-                    <div className='flex items-start justify-start space-x-1 p-3'>
+                <div className='w-full mb-8 border-t border-slate-400/50 bg-white/60 transition-all duration-500'>
+                    <div className='flex items-start justify-start space-x-1 p-2'>
                         <img src={userImg} className='w-8 h-8 mr-2 rounded-full ring-2 ring-blue-500' />
                         <div className='flex-1 min-w-0'>
                             <div className='flex-1 min-w-0'>
