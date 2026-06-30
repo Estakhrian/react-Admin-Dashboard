@@ -158,9 +158,9 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
 
             {/* *User profile */}
             {showSideBar && (
-                <div className='w-full border-t border-slate-400/50 dark:border-slate-700/50'>
-                    <div className='flex items-start justify-start space-x-1 p-3 bg-slate-100
-            dark:bg-slate-800/50'>
+                <div className='w-full border-t border-slate-400/50 bg-gradient-to-bl from-slate-200 to-indigo-100
+    dark:from-slate-900 dark:to-slate-900 transition-all duration-500'>
+                    <div className='flex items-start justify-start space-x-1 p-3'>
                         <img src={userImg} className='w-8 h-8 mr-2 rounded-full ring-2 ring-blue-500' />
                         <div className='flex-1 min-w-0'>
                             <div className='flex-1 min-w-0'>

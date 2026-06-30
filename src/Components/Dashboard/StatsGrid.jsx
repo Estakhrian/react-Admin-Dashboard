@@ -62,7 +62,7 @@ const StatsGrid = () => {
                                 {stat.trend === "up" ? <ArrowUpRight className='w-4 h-4 text-emerald-500' /> :
                                     <ArrowDownRight className='w-4 h-4 text-red-500' />}
                                 <span className={`text-sm font-semibold ${stat.trend === "up" ? "text-emerald-500" : "text-red-500"}`}>{stat.change}</span>
-                                <span className='text-xs text-slate-500 dark:text-slate-400'>Last month</span>
+                                <span className='text-xs text-slate-500 dark:text-slate-400'>vs Last month</span>
                             </div>
                         </div>
                         <div className={`p-3 rounded-xl ${stat.bgColor} group-hover:scale-110 transition-all duration-300`}>

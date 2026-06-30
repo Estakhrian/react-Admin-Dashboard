@@ -4,17 +4,23 @@ import userImg from "./../../assets/images/adminImg.png"
 
 const Header = ({ onToggleSideBar, showSideBar }) => {
 
-    const [darkMode, setDarkMode] = useState(false)
-
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    )
     useEffect(() => {
-        if (darkMode) {
+        if(theme === "dark") {
             document.documentElement.classList.add("dark")
+            localStorage.setItem("theme", "dark")
         } else {
             document.documentElement.classList.remove("dark")
+            localStorage.setItem("theme", "light")
         }
-    })
+    },[theme])
+
+
     return (
-        <div className='w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl BORDER-B border-slate-200/50
+        <div className='w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 
+        dark:border-slate-600
     dark:border-slate700/50 p-3'>
             <div className='flex items-center justify-between'>
                 {/**left section */}
@@ -55,8 +61,8 @@ const Header = ({ onToggleSideBar, showSideBar }) => {
                     {/** Toggle  */}
                     <button className='p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800
                 transition-colors'
-                        onClick={() => setDarkMode(!darkMode)}>
-                        {darkMode ? <Sun className='w-4 h-4 md:w-5 md:h-5' /> : <Moon className='w-4 h-4 md:w-5 md:h-5' />}
+                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+                        {theme === "dark" ? <Sun className='w-4 h-4 md:w-5 md:h-5' /> : <Moon className='w-4 h-4 md:w-5 md:h-5' />}
                     </button>
 
                     {/**notification */}
