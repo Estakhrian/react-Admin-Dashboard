@@ -59,7 +59,7 @@ const activities = [
 const ActivityFeed = () => {
     return (
         <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-lg
-    border border-slate-200/50 dark:border-slate-700/50 mb-2'>
+    border border-slate-200/50 dark:border-slate-700/50 mb-2 overflow-hidden'>
             <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
                 <div>
                     <h3 className='text-base sm:text-lg md:text-xl font-bold text-slate-800 dark:text-white'>Activity feed</h3>

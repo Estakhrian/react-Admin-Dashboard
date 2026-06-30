@@ -22,7 +22,7 @@ const SalesChart = () => {
 
     return (
         <div className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 border w-full
-    border-slate-200/50 dark:border-slate-700/50'>
+    border-slate-200/50 dark:border-slate-700/50 overflow-hidden'>
 
         {/**top section */}
             <div>
