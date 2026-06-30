@@ -70,11 +70,11 @@ const topProducts = [
 const getStatusColor = (status) => {
     switch (status) {
         case "completed":
-            return "bg-green-200 text-emerlad-800 dark:bg-green-900/30 dark:text-green-400";
+            return "bg-green-300 text-emerald-800 dark:bg-green-800 dark:text-green-400";
         case "pending":
-            return "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400";
+            return "bg-yellow-300 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-400";
         case "cancelled":
-            return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
+            return "bg-red-300 text-red-800 dark:bg-red-800 dark:text-red-400";
         default:
             return " bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400"
     }
@@ -88,7 +88,7 @@ const TableSection = () => {
             {/**Recent Order */}
             <div className='bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-lg
       border border-slate-200/50 dark:border-slate700/50 overflow-hidden'>
-                <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
+                <div className='p-6 border-slate-200/50 dark:border-slate-700/50'>
                     <div className='flex items-center justify-between'>
                         <div>
                             <h3 className='text-lg font-bold text-slate-800 dark:text-white'>
@@ -102,41 +102,41 @@ const TableSection = () => {
                 </div>
 
                 {/** table */}
-                <div className='overflow-x-hidden'>
-                    <table>
+                <div className='overflow-x-auto p-1'>
+                    <table className='w-full '>
                         <thead>
-                            <tr className='border-b border-slate-600'>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>ID</th>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>Product</th>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>Amount</th>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>Customer</th>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>Date</th>
-                                <th className='text-left p-4 text-sm font-semibold text-slate-600 border-r'>Status</th>
+                            <tr>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>ID</th>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Product</th>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Amount</th>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Customer</th>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Date</th>
+                                <th className='text-left p-1 md:p-3 lg:p-4 text-sm font-semibold text-slate-600 dark:text-slate-400 border dark:border-slate-600'>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {recentData.map((item, index) => (
-                                <tr key={index} className='border-b border-slate-200/50 dark:border-slate700/50
+                                <tr key={index} className='border border-slate-200/50 dark:border-slate-500/50
                             hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors'>
-                                    <td className='p-4 border-r'>
-                                        <span className='text-sm font-medium text-blue'>{item.id}</span>
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className='text-xs sm:text-sm font-medium text-blue dark:text-white'>{item.id}</span>
                                     </td>
-                                    <td className='p-4 border-r'>
-                                        <span className='text-sm text-slate-800 dark:text-white'>{item.product}</span>
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.product}</span>
                                     </td>
-                                    <td className='p-4 border-r'>
-                                        <span className='text-sm text-slate-800 dark:text-white'>{item.amount}</span>
-                                    </td>
-
-                                    <td className='p-4 border-r'>
-                                        <span className='text-sm text-slate-800 dark:text-white'>{item.customer}</span>
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.amount}</span>
                                     </td>
 
-                                    <td className='p-4 border-r'>
-                                        <span className='text-sm text-slate-800 dark:text-white'>{item.date}</span>
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.customer}</span>
                                     </td>
-                                    <td className='p-4 border-r'>
-                                        <span className={`text-slate-400 dark:text-white font-medium text-xs px-3
+
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className='text-xs sm:text-sm text-slate-800 dark:text-white'>{item.date}</span>
+                                    </td>
+                                    <td className='p-1 sm:p-2 md:p-3 lg:p-4 border dark:border-slate-600'>
+                                        <span className={`text-slate-400 dark:text-white font-medium text-xs px-3 sm:px-4
                                         py-1 rounded-full ${getStatusColor(item.status)}`}>{item.status}</span>
                                     </td>
                                 </tr>
@@ -147,7 +147,7 @@ const TableSection = () => {
             </div>
 
             {/**top products */}
-            <div className='bg-white/80 dark:bg-slate-900-80 backdrop-blur-xl rounded-lg border 
+            <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-lg border 
             border-slate-200/50 dark:border-slate-700/50 overflow-hidden'>
                 <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
                     <div className='flex items-center justify-between'>

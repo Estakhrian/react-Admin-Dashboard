@@ -2,8 +2,10 @@ import {
     Badge, BarChart3, Calendar, ChevronDown, ChevronUp, CreditCard, FileText, LayoutDashboard,
     MessageSquare, Package, Settings, ShoppingBag, Users, Zap
 } from 'lucide-react'
+
 import React, { useState } from 'react'
 import { HiMiniUserCircle } from "react-icons/hi2"
+import userImg from "./../../assets/images/adminImg.png"
 
 
 const menuItems = [
@@ -84,7 +86,7 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
     const [showSubMenu, setShowSubMenu] = useState(null)
 
     return (
-        <div className={`${!showSideBar ? "w-20" : "w-64"} 'transition duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80
+        <div className={`${!showSideBar ? "w-20" : "w-40 sm:w-44 md:w-52 lg:w-60 xl:w-64"} 'transition duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80
     backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50 flex flex-col items-start
     relative z-10'`}>
             {/** logo */}
@@ -108,25 +110,25 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
             </div>
 
             {/**navigation */}
-            <nav className='flex-1 p-4 space-y-2 overflow-y-auto'>
+            <nav className='flex-1 p-1 md:p-2 lg:p-3 space-y-1 md:space-y-2 overflow-y-auto'>
                 {menuItems.map((item) => (
                     <div key={item.id} onClick={() => onPageChanged(item.id)}>
                         <button className={`w-full flex items-center justify-between p-3 rounded-xl
                             transition-all duration-200 ${currentPage === item.id ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25" :
                                 "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"}`}>
-                            <div className='flex items-center space-x-2 mr-1'>
-                                <item.icon className='w-5 h-5' />
+                            <div className='flex items-center space-x- mr-1'>
+                                <item.icon className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />
                                 {/**conditional rendering */}
                                 <>
                                     {showSideBar && (
                                         <div>
-                                            <span className=' font-semibold mx-1'>{item.label}</span>
+                                            <span className='text-sm md:text-base font-semibold mx-1'>{item.label}</span>
 
                                             {item.Badge && (
-                                                <span className='py-1 px-2 text-xs bg-red-500 text-white rounded-full'>{item.Badge}</span>
+                                                <span className='py-1 px-1 md:px-2 text-xs bg-red-500 text-white rounded-full'>{item.Badge}</span>
                                             )}
                                             {item.count && (
-                                                <span className='py-1 px-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-200
+                                                <span className='py-1 px-1 md:px-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-200
                                     dark:bg-slate-700 rounded-full'>{item.count}</span>
                                             )}
                                         </div>
@@ -141,9 +143,9 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
 
                         {/** submenu */}
                         {showSideBar && item.submenu && showSubMenu === item.id && (
-                            <div className=' mt-1 p-1 space-y-1 shadow rounded-xl'>
+                            <div className=' mt-2 p-1 space-y-1 shadow rounded-lg dark:bg-slate-800/70'>
                                 {item.submenu.map((subItem) => (
-                                    <button className='w-full text-left text-sm p-2 text-slate-600 dark:text-slate-400
+                                    <button className='w-full text-left text-sm p-1 md:p-2 text-slate-600 dark:text-slate-400
                                      hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-xl
                                      transition-all'
                                         key={subItem.id}>{subItem.label}</button>
@@ -154,12 +156,12 @@ const Sidebar = ({ showSideBar, currentPage, onPageChanged }) => {
                 ))}
             </nav>
 
-            {/**User profile */}
+            {/* *User profile */}
             {showSideBar && (
-                <div className='p-2 border-t border-slate-200/50 dark:border-slate-700/50'>
-                    <div className='flex items-center justify-start space-x-1 p-3 rounded-xl bg-slate-50
+                <div className='w-full border-t border-slate-400/50 dark:border-slate-700/50'>
+                    <div className='flex items-start justify-start space-x-1 p-3 bg-slate-100
             dark:bg-slate-800/50'>
-                        <HiMiniUserCircle className='w-10 h-10 rounded-full ring-blue-500' />
+                        <img src={userImg} className='w-8 h-8 mr-2 rounded-full ring-2 ring-blue-500' />
                         <div className='flex-1 min-w-0'>
                             <div className='flex-1 min-w-0'>
                                 <p className='text-sm font-medium text-slate-800 dark:text-white truncate'>AlirezaEst</p>
