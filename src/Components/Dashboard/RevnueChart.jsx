@@ -40,7 +40,7 @@ const RevnueChart = () => {
                     <div className='flex items-center space-x-2'>
                         <div className='w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-slate-400 to-slate-500
                         rounded-full'></div>
-                        <div className='text-xs sm:text-sm text-slate-600 dark:text-state-400'>
+                        <div className='text-xs sm:text-sm text-slate-600 dark:text-slate-400'>
                             <span>Expenses</span>
                         </div>
                     </div>
